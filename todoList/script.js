@@ -12,14 +12,11 @@ function addTask() {
         return;
     }
 
-    // Membuat elemen <li> baru
     const li = document.createElement('li');
 
-    // Membuat teks tugas
     const taskSpan = document.createElement('span');
     taskSpan.textContent = taskText;
 
-    // Membuat tombol "Selesai"
     const completeButton = document.createElement('button');
     completeButton.textContent = 'Done';
     completeButton.classList.add('complete-btn');
@@ -27,7 +24,6 @@ function addTask() {
         li.classList.toggle('completed');
     });
 
-    // Membuat tombol "Hapus"
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
     deleteButton.classList.add('delete-btn');
@@ -35,15 +31,12 @@ function addTask() {
         taskList.removeChild(li);
     });
 
-    // Menambahkan elemen ke dalam <li>
     li.appendChild(taskSpan);
     li.appendChild(completeButton);
     li.appendChild(deleteButton);
 
-    // Menambahkan <li> ke dalam <ul>
     taskList.appendChild(li);
 
-    // Mengosongkan input setelah menambah tugas
     taskInput.value = '';
 }
 
